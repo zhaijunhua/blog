@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+	<title>myblog</title>
+	<link rel="stylesheet" type="text/css" href="../css/common/index.css">
+	<script type="text/javascript" src="../js/page/jquery.js"></script>
+</head>
+<body>
+<h1>MY BLOG</h1>
+<!-- 导航栏 -->
+	<div class="top">
+		<ul class="menu">
+			<li class="firstpage">主页</li>
+			<li>我的日志</li>
+			<li>关于我</li>
+			<li>留言板</li>
+		</ul>
+	</div>
+<!-- <导航菜单中，对应的内容> -->
+<div class="content">
+  <dl class="tab">
+    <dt class="first">
+        
+
+	   <div class="slideBox"><!-- 首页轮播 -->
+        <ul>
+            <li><img src="../img/page1.jpg" alt="" /></li>
+            <li><img src="../img/page2.jpg" alt="" /></li>
+            <li><img src="../img/page3.jpg" alt="" /></li>
+            <li><img src="../img/page4.jpg" alt="" /></li>
+            <li><img src="../img/page5.jpg" alt="" /></li>
+    
+         </ul>
+      <div class="spanBox">
+          <span class="active">b</span>
+          <span>l</span>
+          <span>o</span>
+          <span>g</span>
+          <span>s</span>
+
+       </div>
+      <div class="prev">&lt;</div>
+      <div class="next">&gt;</div>
+    </div>
+    <div class="watch">
+        <p>关注我</p>
+        <ul>
+        
+
+       <li class="weibo">
+       <a href="https://weibo.com/u/5680472973?refer_flag=1001030201_">
+          <div>
+          
+              <img src="../img/weibo.png" width="100px"></a><br/>            
+
+              <div class="shade1"></div>
+          
+          </div>
+         </a>
+        </li>
+
+        <li class="email">
+       <a href="">
+          <div>
+            
+              <img src="../img/email.png" width="50px"></a><br/>            
+
+              <div class="shade2"></div>
+         
+          </div>
+           </a>
+        </li>
+
+            <li class="return">
+       
+              <div>
+                <a href="">
+                  <img src="../img/return.png" width="58px"></a><br/>            
+
+                  <div class="shade3"></div>
+                </a>
+              </div>
+
+
+            </li>
+       
+      
+       </ul>  
+       <ul class="bookre"l>
+       <li>
+       <a href="bookrecommed.html">书籍推荐</a>
+		</li>
+       </ul>
+    </div> 
+    
+    
+  </dt>
+  <dt>
+    <div class="">
+      <p>日志记录</p>
+    </div>
+    <div class="log">
+      <h4 class="write">写日志</h4>
+        <form>
+          <div>
+          <textarea id="salary"></textarea>
+          <input type="button" value="保存" class="btnSave" id="btnSave" />
+          <input type="reset" value="取消" class="btnOut" id="cancel">
+        </div>
+        </form>
+    </div>
+  </dt>
+  <dt>
+    <div>
+      <p>
+        90后
+        爱吃
+        爱玩
+      </p>
+    </div>
+  </dt>
+  <dt>
+    
+
+
+
+<!-- 用户注册 -->
+
+
+  <div id="container">
+
+    <div id="list">
+    <!--<dl>
+        <dt>
+          <strong>zmouse</strong> 说 :
+        </dt>
+        <dd>内容</dd>
+        <dd class="t">
+          <a href="javascript:;" id="support">顶(<span>0</span>)</a>
+           | 
+          <a href="javascript:;" id="oppose">踩(<span>0</span>)</a>
+        </dd>
+      </dl>-->
+    </div>
+        <div id="showMore">显示更多...</div>
+
+   
+  <div class="slide">    
+      <!-- 注册 -->
+      <div class="register">
+        <h4>注册</h4>
+        <div>
+          <p>账号：<input type="text" name="username" id="username1"  placeholder="用户名"  placeholder="账号"></p>
+                    <p id="verifyUserNameMsg"></p>
+          <p>密码：<input type="password" name="password" id="password1"  placeholder="密码"></p>
+                    <p><input type="button" value="注册" id="btnReg" /></p>
+        </div>
+      </div>
+
+      <!-- 登陆 -->
+      <div class="login">
+        <h4>登陆</h4>
+        <div>
+            <form action="ajax+java " method="post">
+              <p>账号：<input type="text" name="username2" id="username2"  placeholder="账号"></p>
+              <p>密码：<input type="password" name="password2" id="password2"   placeholder="请输入密码"></p>
+                    <p><input type="button" value="登陆" id="btnLogin" />
+            
+                    </p>
+                    </form>
+          
+        </div>
+      </div>
+      
+      <!-- 留言发表 -->
+      <div class="comment">
+        <h4>发表留言</h4>
+        <div>
+
+          <textarea id="leavecontent"></textarea><br>
+          <input type="button" value="提交" class="btn1" id="btnPost" />
+        </div>
+      </div>
+
+    </div>
+
+ 
+  
+
+  </dt>
+  
+</dl>
+
+</div>
+	
+<script type="text/javascript" src="../js/page/scroll.js"></script>
+<script type="text/javascript" src="../js/page/listtab.js"></script>
+<script type="text/javascript" src="../js/page/shadow.js"></script>
+<script>
+
+$('#btnLogin').click(function(){
+    var userName = $('#username2').val(),
+        password = $('#password2').val();
+    if(userName == '' || password == ''){
+    	alert('用户名或密码不能为空')
+    }else{
+    	$.ajax({
+	        url:'/Bookshops/user/UserLoginServlet',
+	        dataType:'json',
+	        type:'post',
+	        data:{'userName':userName,
+	        	'password':password},
+	        success(data){
+	            
+	            if(data.code == 1){
+	                if(data.data.userStatus == 1){
+	                   alert("登陆成功");
+	                }else if(data.data.userStatus ==2){
+	                    alert("登陆成功");
+	                }
+	            }else{
+                	alert(data.msg);
+                }
+	        }
+	    }).then(function(value){
+	    })
+    }
+    
+})
+
+
+
+$('#btnReg').click(function(){
+		var
+		userName = $('#username1').val(),
+	        password = $('#password1').val();
+	    $.ajax({
+	        url:'/Bookshops/user/UserSignUpServlet',
+	        dataType:'json',
+	        type:'post',
+	        data:{userName,password},
+	        success(data){
+	            if(data.code == 1){
+	                console.log(data)
+	                alert('注册成功，请登录')
+	                $('#userName').val('');
+	                $('#password').val('');
+	            }else{
+	            	alert(data.msg);
+	            }
+	        }
+	    })
+	})
+</script>
+</body>
+</html>
